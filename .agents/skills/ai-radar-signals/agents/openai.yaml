@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Radar Signals"
+  short_description: "Consultar señales AI Radar por día, cantidad y orden"
+  default_prompt: "Consulta las señales de AI Radar y devuelve el JSON solicitado."

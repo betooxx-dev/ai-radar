@@ -3,9 +3,15 @@ node_modules/
 .pnpm-store/
 dist/
 coverage/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
 .env
 .env.*
+!.env.example
 .airadar/
+supabase/.temp/
 data/searches/
 data/reports/
 snapshots/weekly/
