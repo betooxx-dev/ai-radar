@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-radar.local/contracts/ai-radar-daily.schema.json",
+  "title": "AI Radar Daily Snapshot",
+  "description": "Daily collection of evidence-backed AI signals for builders.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "snapshot_date", "search", "signals"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "snapshot_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query", "searched_at", "selection_criteria"],
+      "properties": {
+        "query": {
+          "type": "string",
+          "minLength": 1
+        },
+        "searched_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "selection_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "signals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/signal"
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url", "published_at", "kind"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "company_announcement",
+            "public_institution",
+            "court_or_government",
+            "research_lab",
+            "independent_report",
+            "reputable_media"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "source_urls", "evidence_type", "confidence"],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_urls": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "evidence_type": {
+          "type": "string",
+          "enum": [
+            "announcement",
+            "company_report",
+            "independent_report",
+            "corroboration",
+            "benchmark",
+            "court_filing"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        }
+      }
+    },
+    "impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "affected_areas", "confidence"],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affected_areas": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recommendation", "priority"],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "note", "as_of"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "announced",
+            "rolling_out",
+            "pending_validation",
+            "pending_closure",
+            "mitigation_ongoing"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "category", "source", "evidence", "impact", "action", "status"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^air-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "model",
+            "research",
+            "company",
+            "infrastructure",
+            "security",
+            "policy",
+            "tool",
+            "paper",
+            "repository",
+            "launch"
+          ]
+        },
+        "source": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "impact": {
+          "$ref": "#/$defs/impact"
+        },
+        "action": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        }
+      }
+    }
+  }
+}

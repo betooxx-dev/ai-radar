@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-09-08",
+  "search": {
+    "query": "noticias de inteligencia artificial del 7 de septiembre de 2026 y novedades recientes no incluidas en data/daily/2026-09-08.json",
+    "searched_at": "2026-09-08",
+    "selection_criteria": [
+      "priorizar publicaciones del 2026-09-07",
+      "excluir las cinco señales del snapshot principal del 2026-09-08",
+      "calidad y trazabilidad de la evidencia",
+      "accionabilidad para builders",
+      "diversidad de categorías"
+    ]
+  },
+  "signals": [
+    {
+      "id": "air-2026-09-08-006",
+      "title": "Claude formaliza en Lean el teorema de Fermat",
+      "category": "research",
+      "source": [
+        {
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+          "published_at": "2026-09-04",
+          "kind": "research_lab"
+        },
+        {
+          "name": "Nature",
+          "url": "https://www.nature.com/articles/d41586-026-02822-9",
+          "published_at": "2026-09-07",
+          "kind": "reputable_media"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "Anthropic afirma que Claude produjo en 11 días una formalización completa y verificada por computadora del teorema de Fermat en Lean.",
+          "source_urls": [
+            "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+            "https://www.nature.com/articles/d41586-026-02822-9"
+          ],
+          "evidence_type": "corroboration",
+          "confidence": "high"
+        },
+        {
+          "statement": "El resultado reutiliza trabajo matemático previo y se presenta como un avance de autoformalización y verificación, no como el descubrimiento original del teorema.",
+          "source_urls": [
+            "https://www.anthropic.com/research/formalizing-fermats-last-theorem"
+          ],
+          "evidence_type": "company_report",
+          "confidence": "high"
+        }
+      ],
+      "impact": {
+        "summary": "La formalización automática podría reducir el tiempo necesario para convertir y verificar pruebas matemáticas complejas, siempre que la comunidad pueda revisar y reutilizar los artefactos.",
+        "affected_areas": ["ai_for_science", "formal_verification", "research_automation"],
+        "confidence": "medium"
+      },
+      "action": [
+        {
+          "recommendation": "Inspeccionar el repositorio de la prueba y sus instrucciones de compilación antes de tratar el resultado como una técnica reproducible para otros dominios.",
+          "priority": "medium"
+        }
+      ],
+      "status": {
+        "code": "confirmed",
+        "note": "La formalización y su verificación computacional están documentadas; el alcance generalizable del método todavía debe validarse.",
+        "as_of": "2026-09-08"
+      }
+    },
+    {
+      "id": "air-2026-09-08-007",
+      "title": "HookPry identifica una superficie de ataque en lifecycle hooks de agentes",
+      "category": "security",
+      "source": [
+        {
+          "name": "arXiv",
+          "url": "https://arxiv.org/abs/2609.03884",
+          "published_at": "2026-09-03",
+          "kind": "independent_report"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "El preprint propone HookPry para estudiar actualizaciones de plugins que cambian lifecycle hooks y ejecutan comandos fuera del camino de decisión del modelo.",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.03884"
+          ],
+          "evidence_type": "independent_report",
+          "confidence": "high"
+        },
+        {
+          "statement": "Los autores reportan 1.000 ejecuciones en 25 combinaciones de harnesses y backends, con compromiso de los siete harnesses evaluados y tasas de hasta 92,5%; son resultados del propio estudio y no equivalen a explotación generalizada en producción.",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.03884"
+          ],
+          "evidence_type": "benchmark",
+          "confidence": "medium"
+        }
+      ],
+      "impact": {
+        "summary": "La gobernanza de agentes debe cubrir también configuraciones y hooks que pueden ejecutar efectos en el host sin pasar por la selección explícita de herramientas del modelo.",
+        "affected_areas": ["agent_security", "software_supply_chain", "developer_tools"],
+        "confidence": "high"
+      },
+      "action": [
+        {
+          "recommendation": "Auditar hooks y actualizaciones de plugins, limitar sus privilegios, exigir revisión de cambios de configuración y registrar toda ejecución fuera del bucle del modelo.",
+          "priority": "high"
+        }
+      ],
+      "status": {
+        "code": "pending_validation",
+        "note": "Es un resultado de investigación con experimentos controlados; requiere reproducción y revisión específica por cada harness.",
+        "as_of": "2026-09-08"
+      }
+    },
+    {
+      "id": "air-2026-09-08-008",
+      "title": "Seattle Times y Newsday demandan a OpenAI y Microsoft por uso de periodismo",
+      "category": "policy",
+      "source": [
+        {
+          "name": "U.S. District Court docket vía Justia",
+          "url": "https://dockets.justia.com/docket/new-york/nysdce/1:2026cv07644/672142",
+          "published_at": "2026-09-04",
+          "kind": "court_or_government"
+        },
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/",
+          "published_at": "2026-09-05",
+          "kind": "reputable_media"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "El expediente judicial registra una demanda de The Seattle Times Company y Newsday LLC contra entidades de OpenAI y Microsoft por una causa de copyright presentada el 4 de septiembre de 2026.",
+          "source_urls": [
+            "https://dockets.justia.com/docket/new-york/nysdce/1:2026cv07644/672142"
+          ],
+          "evidence_type": "court_filing",
+          "confidence": "high"
+        },
+        {
+          "statement": "La cobertura describe el caso como una nueva disputa sobre el uso de periodismo para entrenar y operar servicios de IA generativa.",
+          "source_urls": [
+            "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/"
+          ],
+          "evidence_type": "corroboration",
+          "confidence": "medium"
+        }
+      ],
+      "impact": {
+        "summary": "Amplía la presión legal sobre los datos de entrenamiento y puede influir en licencias, acuerdos con publishers y requisitos de procedencia para productos de IA.",
+        "affected_areas": ["copyright", "training_data", "publisher_relationships"],
+        "confidence": "medium"
+      },
+      "action": [
+        {
+          "recommendation": "Mantener inventario de procedencia y licencias de datasets, registrar opt-outs y revisar con asesoría legal cualquier corpus usado para entrenar o evaluar modelos.",
+          "priority": "high"
+        }
+      ],
+      "status": {
+        "code": "confirmed",
+        "note": "La demanda está registrada; el fondo del caso y sus consecuencias legales siguen sin resolverse.",
+        "as_of": "2026-09-08"
+      }
+    },
+    {
+      "id": "air-2026-09-08-009",
+      "title": "Figure y Nscale anuncian una alianza de 3.500 millones de dólares para robots humanoides",
+      "category": "infrastructure",
+      "source": [
+        {
+          "name": "Nscale",
+          "url": "https://www.nscale.com/press-releases/nscale-and-figure",
+          "published_at": "2026-09-03",
+          "kind": "company_announcement"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "Nscale anuncia una alianza plurianual con Figure que contempla un compromiso inicial de 3.500 millones de dólares en cómputo, con intención de superar 6.000 millones y desplegar potencialmente hasta 100.000 GPUs.",
+          "source_urls": [
+            "https://www.nscale.com/press-releases/nscale-and-figure"
+          ],
+          "evidence_type": "announcement",
+          "confidence": "high"
+        },
+        {
+          "statement": "El despliegue inicial de GPUs está previsto para comenzar en la segunda mitad de 2027 y Nscale también anuncia una inversión estratégica y participación accionaria en Figure.",
+          "source_urls": [
+            "https://www.nscale.com/press-releases/nscale-and-figure"
+          ],
+          "evidence_type": "company_report",
+          "confidence": "medium"
+        }
+      ],
+      "impact": {
+        "summary": "Señala que la robótica humanoide está entrando en una fase donde datos, cómputo y despliegue físico se integran como una sola apuesta de infraestructura.",
+        "affected_areas": ["physical_ai", "robotics", "ai_compute"],
+        "confidence": "medium"
+      },
+      "action": [
+        {
+          "recommendation": "Seguir la ejecución real del compromiso frente a la capacidad potencial anunciada y evaluar dependencias de proveedor, coste de inferencia y disponibilidad de hardware.",
+          "priority": "medium"
+        }
+      ],
+      "status": {
+        "code": "announced",
+        "note": "La alianza y el compromiso fueron anunciados; el despliegue principal está previsto para 2027.",
+        "as_of": "2026-09-08"
+      }
+    },
+    {
+      "id": "air-2026-09-08-010",
+      "title": "El científico jefe de OpenAI advierte sobre aceleración y falta de preparación para la inteligencia avanzada",
+      "category": "research",
+      "source": [
+        {
+          "name": "OpenAI",
+          "url": "https://openai.com/index/an-alien-mind/",
+          "published_at": "2026-09-06",
+          "kind": "research_lab"
+        }
+      ],
+      "evidence": [
+        {
+          "statement": "Jakub Pachocki, científico jefe de OpenAI, escribe que los modelos de razonamiento ya pueden operar computadoras, colaborar entre sí y llevar a cabo proyectos de investigación.",
+          "source_urls": [
+            "https://openai.com/index/an-alien-mind/"
+          ],
+          "evidence_type": "company_report",
+          "confidence": "medium"
+        },
+        {
+          "statement": "El autor expresa una expectativa interna de que el ritmo de progreso pueda sostenerse hacia la auto-mejora recursiva y pide cautela extrema e intervenciones más amplias.",
+          "source_urls": [
+            "https://openai.com/index/an-alien-mind/"
+          ],
+          "evidence_type": "company_report",
+          "confidence": "medium"
+        }
+      ],
+      "impact": {
+        "summary": "Eleva la gobernanza, el monitoreo y la coordinación externa a problemas operativos inmediatos para sistemas agentivos, aunque las proyecciones no son un pronóstico independiente.",
+        "affected_areas": ["ai_safety", "agent_governance", "model_monitoring"],
+        "confidence": "medium"
+      },
+      "action": [
+        {
+          "recommendation": "Tratar las proyecciones como una señal de riesgo y revisar controles de monitoreo, límites de autonomía y procedimientos de pausa para agentes con acceso a herramientas.",
+          "priority": "high"
+        }
+      ],
+      "status": {
+        "code": "pending_validation",
+        "note": "Es una posición y proyección de un ejecutivo de investigación; las capacidades y el ritmo futuro requieren evidencia independiente.",
+        "as_of": "2026-09-08"
+      }
+    }
+  ]
+}

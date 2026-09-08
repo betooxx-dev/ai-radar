@@ -1,0 +1,5 @@
+# Project-local Codex defaults for AI Radar.
+# Codex loads this file only when the repository is trusted.
+# Full access disables sandbox isolation and approval prompts for this project.
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
