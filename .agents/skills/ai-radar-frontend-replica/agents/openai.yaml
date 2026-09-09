@@ -1,0 +1,5 @@
+interface:
+  display_name: "AI Radar Frontend Replica"
+  short_description: "Replicate Next.js UI from a reference image"
+  brand_color: "#06B6D4"
+  default_prompt: "Use $ai-radar-frontend-replica to replicate this Next.js frontend from the attached reference image."
